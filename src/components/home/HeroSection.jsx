@@ -135,44 +135,61 @@ export default function HeroSection() {
             {/* LAKE CITY title */}
             <motion.h1
               variants={fadeUp}
-              className="text-5xl md:text-7xl font-light text-white mb-4 tracking-tight"
+              className="text-5xl md:text-7xl text-white mb-4 tracking-[0.15em]"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
               LAKE CITY
             </motion.h1>
 
-            {/* Fish title */}
-            <motion.h2
-              variants={fadeUp}
-              className="text-6xl md:text-8xl font-serif italic text-[#d4a84b] mb-8"
-            >
-              Fish
-            </motion.h2>
-            
-            {/* Animated Fish Icon */}
+            {/* Animated Fish Illustration */}
             <motion.div
-              className="mb-8"
+              className="mb-3"
               variants={fadeRight}
             >
               <motion.svg
-                className="w-24 h-12 text-[#d4a84b]"
-                viewBox="0 0 100 40"
-                fill="currentColor"
-                animate={{ x: [0, 8, 0] }}
+                className="w-32 h-[18px]"
+                viewBox="0 0 80 14"
+                fill="none"
+                animate={{ x: [0, 6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <ellipse cx="35" cy="20" rx="30" ry="15"/>
-                <polygon points="65,10 85,20 65,30"/>
-                <circle cx="20" cy="17" r="3" fill="#1a2e45"/>
-                <path d="M5,20 Q15,15 25,20" stroke="#1a2e45" strokeWidth="2" fill="none"/>
+                <path
+                  d="M12,7 C16,3 26,1.5 38,3.5 C46,4.5 52,6 56,7 C52,8 46,9.5 38,10.5 C26,12.5 16,11 12,7Z"
+                  fill="rgba(255,255,255,0.55)"
+                />
+                <path d="M56,7 L66,2.5 L66,11.5 Z" fill="rgba(255,255,255,0.55)" />
+                <circle cx="20" cy="6" r="1" fill="#1a2e45" />
+                <path
+                  d="M30,5 Q33,3.5 36,5.5"
+                  stroke="rgba(26,46,69,0.35)"
+                  strokeWidth="0.5"
+                  fill="none"
+                />
+                <path
+                  d="M38,5.5 Q41,4 44,6"
+                  stroke="rgba(26,46,69,0.35)"
+                  strokeWidth="0.5"
+                  fill="none"
+                />
               </motion.svg>
             </motion.div>
+
+            {/* Fish script title */}
+            <motion.h2
+              variants={fadeUp}
+              className="text-6xl md:text-8xl text-[#d4a84b] mb-4"
+              style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 700 }}
+            >
+              Fish
+            </motion.h2>
 
             {/* Tagline */}
             <motion.p
               variants={fadeUp}
-              className="text-xl md:text-2xl text-white/80 font-light mb-4"
+              className="text-white/50 text-xs md:text-sm tracking-[0.2em] uppercase mb-8"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Fresh Wild-Caught Seafood Daily
+              Fresh Wild&middot;Caught Seafood Daily
             </motion.p>
 
             {/* Description */}
