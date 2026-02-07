@@ -1,0 +1,25 @@
+[
+  {
+    "customer_name": "harsha",
+    "customer_email": "harshakolla90@gmail.com",
+    "customer_phone": "2533629609",
+    "items": [
+      {
+        "product_name": "Catfish Fillet",
+        "quantity": 1,
+        "price": 8.99,
+        "total": 8.99
+      }
+    ],
+    "subtotal": 8.99,
+    "tax": 0.7416750000000001,
+    "total": 9.731675000000001,
+    "payment_method": "cash_on_pickup",
+    "payment_status": "pending",
+    "pickup_date": "2026-02-07",
+    "notes": "",
+    "status": "pending",
+    "order_number": "LCF-796308",
+    "created_at": "2026-02-07T16:11:48.945Z"
+  }
+]
