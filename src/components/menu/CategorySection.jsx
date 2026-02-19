@@ -22,6 +22,11 @@ const categoryInfo = {
     title: 'Premium Seafood',
     subtitle: 'Market Price',
     description: 'Ask about today\'s fresh selections'
+  },
+  ready_to_eat: {
+    title: 'Ready to Eat',
+    subtitle: 'Prepared Fresh',
+    description: 'Delicious meals ready to enjoy - made fresh daily'
   }
 };
 

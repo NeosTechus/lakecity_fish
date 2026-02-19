@@ -19,7 +19,7 @@ export default function Menu() {
     return acc;
   }, {});
 
-  const categoryOrder = ['catfish', 'jack_salmon', 'buffalo', 'market_price'];
+  const categoryOrder = ['catfish', 'jack_salmon', 'buffalo', 'market_price', 'ready_to_eat'];
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">

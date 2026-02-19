@@ -105,7 +105,7 @@
 		"price": null,
 		"unit": "lb",
 		"protein_per_serving": 17,
-		"image": "https://images.unsplash.com/photo-1464942089211-779be77129b3?w=600&h=400&fit=crop&auto=format"
+		"image": "/king crab legs.jpeg"
 	},
 	{
 		"name": "Scottish Salmon",
@@ -205,5 +205,32 @@
 		"unit": "lb",
 		"protein_per_serving": 19,
 		"image": "https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=600"
+	},
+	{
+		"name": "Catfish Po'Boy",
+		"description": "Crispy fried catfish served on fresh French bread with lettuce, tomato, and remoulade sauce.",
+		"category": "ready_to_eat",
+		"price": 12.99,
+		"unit": "each",
+		"protein_per_serving": 18,
+		"image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=400&fit=crop&auto=format"
+	},
+	{
+		"name": "Shrimp Po'Boy",
+		"description": "Golden fried shrimp piled on French bread with lettuce, tomato, and remoulade sauce.",
+		"category": "ready_to_eat",
+		"price": 13.99,
+		"unit": "each",
+		"protein_per_serving": 20,
+		"image": "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&h=400&fit=crop&auto=format"
+	},
+	{
+		"name": "Whole Smoked Salmon",
+		"description": "Slow-smoked whole salmon with a rich, savory flavor. Ready to serve.",
+		"category": "ready_to_eat",
+		"price": null,
+		"unit": "lb",
+		"protein_per_serving": 22,
+		"image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&auto=format"
 	}
 ]
