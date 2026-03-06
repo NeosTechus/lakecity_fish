@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Plus } from 'lucide-react';
+import { useCart } from '@/components/cart/CartContext';
+import { Button } from '@/components/ui/button';
 
 export default function ProductCard({ product, index = 0 }) {
+  const { addToCart } = useCart();
   const [imgError, setImgError] = useState(false);
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart(product, 1);
+  };
 
   return (
     <motion.div
@@ -57,6 +66,16 @@ export default function ProductCard({ product, index = 0 }) {
             </p>
           )}
         </div>
+
+        {product.price && (
+          <Button
+            onClick={handleAddToCart}
+            className="w-full mt-4 bg-[#1a2e45] hover:bg-[#d4a84b] text-white hover:text-[#1a2e45] transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <Plus className="w-4 h-4" />
+            Add to Cart
+          </Button>
+        )}
 
         {!product.price && (
           <div className="mt-4 text-center">

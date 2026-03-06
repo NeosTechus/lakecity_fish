@@ -5,15 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "*",
     "@tanstack/react-query": "*",
+    "bcryptjs": "^3.0.3",
     "clsx": "*",
     "framer-motion": "*",
+    "jsonwebtoken": "^9.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "*",
+    "mongodb": "^7.1.0",
     "next": "^14.2.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
