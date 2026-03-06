@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, LogIn, UserPlus, User, ChefHat, Shield } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, LogIn, UserPlus, User } from 'lucide-react';
 import { toast } from 'sonner';
 import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { useAuth } from '@/components/auth/AuthContext';
 
-const ROLES = [
-  { id: 'customer', label: 'Customer', icon: User },
-  { id: 'kitchen', label: 'Kitchen', icon: ChefHat },
-  { id: 'admin', label: 'Admin', icon: Shield },
-];
-
 export default function LoginPage() {
   const router = useRouter();
   const { login, register } = useAuth();
   const [activeTab, setActiveTab] = useState('signin');
-  const [selectedRole, setSelectedRole] = useState('customer');
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,7 +39,7 @@ export default function LoginPage() {
           setIsSubmitting(false);
           return;
         }
-        const user = await register(formData.name, formData.email, formData.password, selectedRole);
+        const user = await register(formData.name, formData.email, formData.password);
         toast.success(`Account created! Welcome, ${user.name}`);
         redirectByRole(user.role);
       }
@@ -128,37 +121,6 @@ export default function LoginPage() {
                     Sign Up
                   </button>
                 </div>
-
-                {/* Role Selector (Sign Up only) */}
-                {activeTab === 'signup' && (
-                  <div className="mb-6">
-                    <label className="block text-xs uppercase tracking-[0.15em] text-[#1a2e45]/50 font-medium mb-3">
-                      Select Role
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {ROLES.map((role) => {
-                        const Icon = role.icon;
-                        return (
-                          <button
-                            key={role.id}
-                            type="button"
-                            onClick={() => setSelectedRole(role.id)}
-                            className={`flex flex-col items-center gap-1.5 py-3 px-2 border transition-all text-xs font-medium ${
-                              selectedRole === role.id
-                                ? 'border-[#d4a84b] bg-[#d4a84b]/5 text-[#1a2e45]'
-                                : 'border-gray-200 text-[#1a2e45]/40 hover:border-gray-300'
-                            }`}
-                          >
-                            <Icon className={`w-5 h-5 ${
-                              selectedRole === role.id ? 'text-[#d4a84b]' : ''
-                            }`} />
-                            {role.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-5">
