@@ -12,8 +12,6 @@ const routeToPageName = {
   '/': 'Home',
   '/menu': 'Menu',
   '/contact': 'Contact',
-  '/checkout': 'Checkout',
-  '/order-confirmation': 'OrderConfirmation',
   '/not-registered': 'UserNotRegisteredError'
 };
 
