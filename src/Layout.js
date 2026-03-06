@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ShoppingCart } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { createPageUrl } from "@/utils";
-import { CartProvider, useCart } from "@/components/cart/CartContext";
-import CartSidebar from "@/components/cart/CartSidebar";
 import { Toaster } from "sonner";
 
-function LayoutContent({ children, currentPageName }) {
+export default function Layout({ children, currentPageName }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
-  const { getCartCount } = useCart();
 
   const navLinks = [
     { name: "Home", page: "Home" },
@@ -108,18 +104,6 @@ function LayoutContent({ children, currentPageName }) {
                 </Link>
               ))}
 
-              <button
-                onClick={() => setCartOpen(true)}
-                className="relative p-2 text-white/70 hover:text-white transition-colors"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                {getCartCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#d4a84b] text-[#1a2e45] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    {getCartCount()}
-                  </span>
-                )}
-              </button>
-
               <a
                 href="tel:3145825011"
                 className="flex items-center gap-2 px-5 py-2.5 bg-[#d4a84b] text-[#1a2e45] text-sm font-semibold hover:bg-[#e5b95c] transition-colors"
@@ -129,19 +113,8 @@ function LayoutContent({ children, currentPageName }) {
               </a>
             </nav>
 
-            {/* Mobile Menu & Cart Buttons */}
+            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-2">
-              <button
-                onClick={() => setCartOpen(true)}
-                className="relative p-2 text-white"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                {getCartCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#d4a84b] text-[#1a2e45] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    {getCartCount()}
-                  </span>
-                )}
-              </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-white p-2"
@@ -192,9 +165,6 @@ function LayoutContent({ children, currentPageName }) {
           )}
         </AnimatePresence>
       </header>
-
-      {/* Cart Sidebar */}
-      <CartSidebar isOpen={cartOpen} onClose={() => setCartOpen(false)} />
 
       {/* Main Content */}
       <main className="flex-1 pt-20">{children}</main>
@@ -278,15 +248,5 @@ function LayoutContent({ children, currentPageName }) {
       {/* Toast Notifications */}
       <Toaster position="top-right" richColors />
     </div>
-  );
-}
-
-export default function Layout({ children, currentPageName }) {
-  return (
-    <CartProvider>
-      <LayoutContent currentPageName={currentPageName}>
-        {children}
-      </LayoutContent>
-    </CartProvider>
   );
 }
